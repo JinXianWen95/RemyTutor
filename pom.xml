@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.unipd.dei.webapp</groupId>
+    <artifactId>education</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>war</packaging>
+
+    <!-- Project description elements -->
+    <name>Education</name>
+    <description>Tutoring website</description>
+
+    <!-- Build settings -->
+    <!-- Specifies the encoding to be used for project source files -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- Configuration of the default build lifecycle -->
+    <build>
+
+        <defaultGoal>compile</defaultGoal>
+        <!-- source code folder -->
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <!-- compiled code folder -->
+        <directory>${basedir}/target</directory>
+        <!-- name of the generated package -->
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
+        <!-- configuration of the plugins for the different goals -->
+        <plugins>
+
+            <!-- compiler plugin: source and target code is for Java 1.8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- javadoc plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<reportOutputDirectory>${basedir}/javadoc</reportOutputDirectory>
+					<author>true</author>
+					<nosince>false</nosince>
+					<show>protected</show>
+				</configuration>
+			</plugin>
+
+            <!-- packager plugin: create a WAR file to be deployed -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+
+            <!-->Tomcat plugin, used for development speed-up
+
+            Usage (two options): 1) mvn clean package tomcat7:run to open a website session through the Tomcat 7
+                                    embedded in the plugin (it means you don't need Tomcat installed, because it will use
+                                    the one inside the plugin) at localhost:8080/remytutor, accessible by browser.
+                                    2) mvn clean package tomcat7:redeploy to interact with an already running
+                                    Tomcat (tested, works also with Tomcat 9) and deploy/redeploy automatically the war,
+                                    that will be visible in the manager-gui, and can be accessed directly through
+                                    localhost:8080/remytutor.
+
+           In your tomcat-users.xml you need at least the following xml code if you want to use option 2) :
+
+           <role rolename="manager-script"/>
+           <user username="admin" password="pass" roles="manager-script"/>
+
+           You can have custom username and password, and in that case you need to modify the below configuration yourself-->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <username>admin</username>
+                    <password>pass</password>
+                    <path>/remytutor</path>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+        <resources>
+            <!--  copy files to the target directory -->
+            <resource>
+                <targetPath>${basedir}/target/${project.artifactId}-${project.version}</targetPath>
+                <directory>.</directory>
+                <includes>
+                    <include>*.jsp</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <targetPath>${basedir}/target/${project.artifactId}-${project.version}/css</targetPath>
+                <directory>${basedir}/src/main/webapp/css</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <targetPath>${basedir}/target/${project.artifactId}-${project.version}/js</targetPath>
+                <directory>${basedir}/src/main/webapp/js</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <targetPath>${basedir}/target/${project.artifactId}-${project.version}/media</targetPath>
+                <directory>${basedir}/src/main/webapp/images</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+            
+            <!-- resource>
+                <targetPath>${basedir}/target/${project.artifactId}-${project.version}/java</targetPath>
+                <directory>${basedir}/src/main/webapp/java</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource --> 
+
+        </resources>
+
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.20</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-spec</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-jstlel</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        
+    </dependencies>
+
+</project>

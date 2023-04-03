@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="education-webapp"
+         version="4.0"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+
+    <display-name>RemyTutor</display-name>
+    <description>Tutoring website</description>
+
+    <!-- FEEDBACK -->
+
+    <servlet>
+        <servlet-name>feedbacksServlet</servlet-name>
+        <servlet-class>FeedbacksServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>feedbacksServlet</servlet-name>
+        <url-pattern>/feedbacks</url-pattern>
+    </servlet-mapping>
+    
+    <!-- TEACHER -->
+    
+    <servlet>
+        <servlet-name>teacherServlet</servlet-name>
+        <servlet-class>TeacherServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>teacherServlet</servlet-name>
+        <url-pattern>/teacher</url-pattern>
+    </servlet-mapping>
+    
+    <!-- PAYMENT -->
+    
+    <servlet>
+        <servlet-name>paymentsServlet</servlet-name>
+        <servlet-class>PaymentsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>paymentsServlet</servlet-name>
+        <url-pattern>/payments</url-pattern>
+    </servlet-mapping>
+
+    <!-- INDEX -->
+    
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>IndexServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/indexpost</url-pattern>
+    </servlet-mapping>
+    
+    <!-- SEARCH -->
+    
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>SearchServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    
+    <!-- DASHBOARD HOMEPAGE -->
+    
+    <servlet>
+        <servlet-name>ControlServlet</servlet-name>
+        <servlet-class>ControlServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ControlServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Servlet for profile page -->
+    
+    <servlet>
+        <servlet-name>profileServlet</servlet-name>
+        <servlet-class>ProfileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>profileServlet</servlet-name>
+        <url-pattern>/profileServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>profileServlet</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Servlet for chat page-->
+
+    <servlet>
+     <servlet-name>ChatServlet</servlet-name>
+     <servlet-class>ChatServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChatServlet</servlet-name>
+        <url-pattern>/chatpost</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ChatServlet</servlet-name>
+        <url-pattern>/chat</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Servlet for rest-->
+    <servlet>
+     <servlet-name>RestServlet</servlet-name>
+     <servlet-class>RestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RestServlet</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

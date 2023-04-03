@@ -1,0 +1,7 @@
+1210174;Marco Dalla Mutta;marco.dallamutta@studenti.unipd.it;dallamutta;modm95@gmail.com 
+1205721;Marco Dell'Anna;marco.dellanna@studenti.unipd.it;dellannama;marco.dellanna@studenti.unipd.it
+1216114;Memen Hamzah Obaid Salihi;memenhamzahobaid.salihi@studenti.unipd.it;memenhamzahobaid.salihi@studenti.unipd.it
+1190245;Xianwen Jin;xianwen.jin@studenti.unipd.it;jinxianwen;jinxw@live.it
+1205378;Victor Semencenco;victor.semencenco@studenti.unipd.it;semencenco;victor.semencenco@gmail.com
+1237119; ahmadbashir.usman@studenti.unipd.it; ahmad7bashir@gmail.com
+

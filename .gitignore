@@ -1,0 +1,19 @@
+# IDE and generic config files
+*.iml
+.classpath
+.project
+.idea/
+.settings/
+.vscode/
+
+# Java
+*.class
+target/
+javadoc/
+log/
+
+# Package Files
+*.jar
+*.war
+
+

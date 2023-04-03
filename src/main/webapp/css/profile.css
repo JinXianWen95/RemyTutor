@@ -1,0 +1,177 @@
+/* box */
+main .box{
+    position: relative;
+    width: 237px;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 10px;
+}
+
+main .box h4, main .box > p, main .box form > p{
+    text-align: center;
+}
+
+
+main .box input[type="text"], main .box input[type="date"], main .box select,
+    main .box input[type="tel"], main .box input[type="email"], main .box input[type="number"]{
+        width: 100%;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        color: #444;
+        padding: 18px 10px 18px 10px;
+        border: 2px solid #e0e0e0;
+        border-radius: 5px;
+        outline: none;
+        margin: 4px 0px;
+}
+
+main .box input[type="password"]{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    color: #444;
+    margin: 8px 0px;
+    padding: 18px 10px 18px 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;      
+}
+
+main .box input[type="text"]:focus, main .box input[type="date"]:focus, main .box input[type="password"]:focus,
+    main .box select:focus, main .box input[type="tel"]:focus, main .box input[type="email"]:focus, 
+    
+main .box input[type="text"]:hover, main .box input[type="date"]:hover, main .box input[type="password"]:hover,
+    main .box select:hover, main .box input[type="tel"]:hover, main .box input[type="email"]:hover
+    main .box input[type="number"]:hover{
+        
+        border: 2px solid rgb(69, 215, 255);
+}
+
+/*table,th,td{
+    
+    border: 1px solid black;
+}*/
+
+main .box #topicForm table th td {  
+    text-align: center;    
+}
+
+
+main .box #topicForm input[type="number"]{
+    width: 80px;
+     -moz-appearance: textfield;
+	 text-align: center;
+}
+
+main .box #topicForm input[type="number"]:hover{
+    border: 2px solid rgb(69, 215, 255);
+
+}
+main .box #topicForm input[type="number"]:focus{
+        
+    border: 2px solid rgb(69, 215, 255);
+}
+
+main .box #topicForm tr th img, main .box #topicForm tr td img {
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+}
+
+
+main .box #topicForm tr td, main .box #topicForm tr th {            
+    text-align: center;
+    padding: 0px 15px;
+}
+
+
+
+main .box #topicForm input::-webkit-outer-spin-button, main .box #topicForm input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+main .box input[type="submit"]{
+    padding: 14px 20px;
+    margin: 15px 0px 0px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    outline: none;
+    box-shadow: 0px 0px 1px 1px #3dc21b;
+	background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	background-color: #44c767;
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow:0px 1px 19px #2f6627;
+}
+
+main .box input[type="submit"]:hover, main .box .file_label:hover{
+    background: linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	background-color: #5cbf2a;
+}
+
+main .box input[type="file"]{
+    display: none;
+}
+
+main .box label{ 
+    color: #ccc;
+}
+
+main > div .box .profile_img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+	object-fit: cover;
+}
+
+main > div .box .id_img{
+    width: 120px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+main > div .box .qualification_img{
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+} 
+
+main .box .file_label{
+    margin: 8px 0px 0px;
+    font-size: 13px;
+    display: inline-block;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    outline: none;
+    box-shadow: 0px 0px 2px 1px #3dc21b;
+	background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	background-color: #44c767;
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow:0px 1px 19px #2f6627;
+}
+
+main .box #personal_presentation{
+    max-width: 600px;
+    text-align: left;
+}
+
+main .box #message{
+    text-align: center;
+    font-weight: bold;
+}
